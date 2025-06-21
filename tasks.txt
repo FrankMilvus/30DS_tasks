@@ -1,0 +1,25 @@
+Intermediate Level (11-20):
+
+    LCM of Two Numbers
+    Armstrong Number Checker
+    Perfect Number Checker
+    Prime Numbers in Range
+    Pattern Printing (Pyramid, Diamond)
+    Simple Calculator (+, -, *, / with switch)
+    Temperature Converter (C/F/K)
+    Binary to Decimal Converter
+    Decimal to Binary Converter
+    Array Sum and Average
+
+Advanced Beginner (21-30):
+
+    Find Array Maximum/Minimum
+    Linear Search in Array
+    Bubble Sort Implementation
+    Matrix Addition
+    String Palindrome Checker
+    String Concatenation
+    Count Vowels/Consonants in String
+    Remove Duplicates from Sorted Array
+    Basic Structure Implementation (Student Record)
+    File I/O (Read/Write to text file)
