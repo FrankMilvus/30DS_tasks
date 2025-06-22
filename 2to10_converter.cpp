@@ -20,5 +20,9 @@ int main(int argc, char const *argv[])
     }
 
     cout << "Decimal number is: " << decimal << endl;
+
+    int tmp;
+    tmp = 2 << 2;
+    cout << tmp;
     return 0;
 }
