@@ -4,7 +4,7 @@ Intermediate Level (11-20):
     Armstrong Number Checker
     Perfect Number Checker
     Prime Numbers in Range
-    Pattern Printing (Pyramid, Diamond)
+    !Pattern Printing (Pyramid, Diamond)
     Simple Calculator (+, -, *, / with switch)
     Temperature Converter (C/F/K)
     Binary to Decimal Converter
