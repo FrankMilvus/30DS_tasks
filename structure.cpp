@@ -5,6 +5,8 @@
 #include <string>
 #include <algorithm>
 #include <iterator>
+#include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -18,13 +20,15 @@ int main(int argc, char const *argv[])
     cout << "Enter the name of the student: ";
     string name;
     cin >> name;
+
     for (auto &student : students)
     {
         if (student.getName() == name)
         {
             cout << "Found student: " << student.getName() << ", Age: " << student.getAge() << endl;
-            break;
+            return 0;
         }
     }
+    cout << "there is no such guy, I'm so soryy" << endl;
     return 0;
 }
