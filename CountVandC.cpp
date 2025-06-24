@@ -5,31 +5,46 @@
 #include <algorithm>
 using namespace std;
 
+bool isInString(char &symbol, const string &where)
+{
+    for (char c : where)
+    {
+        c = tolower(c);
+        symbol = tolower(symbol);
+        if (c == symbol)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main(int argc, char const *argv[])
 {
-    string vow = "AEIOUY";
-    string con = "BCDFGHJKLMNPQRSTVWXYZ";
+    string vow = "aeiou";
+    string con = "bcdfghjklmnpqrstvwxyz";
     string Str = "Hello world, I am so glad to see you!!";
 
     unsigned int qVow = 0;
     unsigned int qCon = 0;
     unsigned int qOther = 0;
+    unsigned int qAlpha = 0;
 
-    char cur = ' ';
-
-    for (int i = 0; i < Str.length(); ++i)
+    for (char cur : Str)
     {
-        cur = Str[i];
+        if (isalpha(cur))
+        {
+            ++qAlpha;
+        }
 
-        auto fVow = find(vow.begin(), vow.end(), cur);
-        if (fVow != vow.end())
+        cur = tolower(cur);
+        if (isInString(cur, vow))
         {
             ++qVow;
         }
         else
         {
-            auto fCon = find(con.begin(), con.end(), cur);
-            if (fCon != con.end())
+            if (isInString(cur, con))
             {
                 ++qCon;
             }
@@ -42,6 +57,8 @@ int main(int argc, char const *argv[])
     cout << "In " << Str << " there is vowels: " << qVow << " and Consonants: " << qCon << endl;
 
     cout << "There are some other symbols: " << qOther << endl;
+    cout << "Alphas in string: " << qAlpha << endl;
+    cout << "String lenght: " << Str.length() << endl;
 
     return 0;
 }
