@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     string vow = "AEIOUY";
-    string Con = "BCDFGHJKLMNPQRSTVWXYZ";
+    string con = "BCDFGHJKLMNPQRSTVWXYZ";
     string Str = "Hello world, I am so glad to see you!!";
 
     unsigned int qVow = 0;
@@ -20,22 +20,21 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < Str.length(); ++i)
     {
         cur = Str[i];
-        
-        auto fVow = vow.find(cur);
-        if (fVow != string::npos)
+
+        auto fVow = find(vow.begin(), vow.end(), cur);
+        if (fVow != vow.end())
         {
             ++qVow;
         }
         else
         {
-            auto fCon = Con.find(cur);
-            if (fCon != string::npos)
+            auto fCon = find(con.begin(), con.end(), cur);
+            if (fCon != con.end())
             {
                 ++qCon;
             }
             else
             {
-                // it isn't vowel or consonatn
                 ++qOther;
             }
         }
