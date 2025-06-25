@@ -1,22 +1,21 @@
 /*he simplest way to copy a file in C++ on Windows 11
  (including mobile/tablet devices) is to use the Windows
   API function CopyFile() or CopyFile2().*/
-
 #include <windows.h>
+#include <string>
 #include <iostream>
 
-// LPCWSTR means: "Long Pointer to Constant Wide String" - essentially a pointer to a read-only Unicode (UTF-16) string.
-int copyFileMobile(LPCWSTR sourceFile, LPCWSTR destFile)
+int copyFileMobile(const std::wstring &sourceFile, const std::wstring &destFile)
 {
     // Copy file (fails if destination exists)
-    if (CopyFileW(sourceFile, destFile, TRUE))
+    if (CopyFileW(sourceFile.c_str(), destFile.c_str(), TRUE))
     {
-        std::wcout << L"Mobile copyng: File copied successfully.\n";
+        std::wcout << L"Mobile copying: File copied successfully.\n";
+        return 0; // Success
     }
     else
     {
-        std::wcerr << L"Mobile copyng: Failed to copy file. Error: " << GetLastError() << L"\n";
+        std::wcerr << L"Mobile copying: Failed to copy file. Error: " << GetLastError() << L"\n";
+        return 1; // Failure
     }
-
-    return 0;
 }

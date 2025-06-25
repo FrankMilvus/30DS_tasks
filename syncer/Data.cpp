@@ -10,7 +10,6 @@ class Data
 {
 private:
     string AddedPath;
-    // LPCWSTR
     wstring AddedMobilePath;
 
 public:
@@ -50,7 +49,7 @@ void Data::addLocalPath(const string &localPath)
 
 void Data::addMobilePath(const string &mobilePath)
 {
-    // LPCWSTR
+
     string mobilePathProccessed;
 
     for (size_t i = 0; i < mobilePath.length(); i++)
@@ -78,7 +77,7 @@ void Data::addMobilePath(const string &mobilePath)
 
 string Data::getPath()
 {
-    return AddedPath;
+    return WstrToStr(AddedMobilePath);
 }
 
 wstring Data::getMobileMath()
