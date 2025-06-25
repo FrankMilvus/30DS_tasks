@@ -4,15 +4,20 @@
 #include <string>
 #include "./copyFuncLocally.cpp"
 #include "./copyFuncMobile.cpp"
+#include "./Data.cpp"
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-
-    // string FileDistination = "C:\\Users\\Frank\\Desktop\\tmp(LOCAL).txt";
+    Data data;
 
     // copy file locally to USB
-    string FileSorce = "C:\\Users\\Frank\\Desktop\\tmp.txt";
+    // C:\Users\Frank\Desktop\tmp.txt
+    string UserLocalPath;
+    cin >> UserLocalPath;
+    data.addLocalPath(UserLocalPath);
+    string FileSorce = data.getPath();
+    // string FileSorce = "C:\\Users\\Frank\\Desktop\\tmp.txt";
     string FileDistinationUSB = "D:\\tmp(USB).txt";
     copyFileLocally(FileSorce, FileDistinationUSB);
 
